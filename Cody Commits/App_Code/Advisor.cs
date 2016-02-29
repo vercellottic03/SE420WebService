@@ -6,37 +6,36 @@ using System.Web;
 /// <summary>
 /// Summary description for Advisor
 /// </summary>
-public class Advisor
-{
-    private int A_ID1;
-    public string A_Name;
-    public string A_PIN;
-    public string A_Theme;
-
-
-    public int A_ID
+    public class Advisor
     {
-        get
+        private int A_ID1;
+        public string A_Name;
+        public string A_PIN;
+        public string A_Theme;
+
+        public int A_ID
         {
-            return A_ID1;
+            get
+            {
+                return A_ID1;
+            }
+
+            set
+            {
+                A_ID1 = value;
+            }
         }
 
-        set
-        {
-            A_ID1 = value;
-        }
+
+
+        /* public Advisor()
+         {
+         A_ID1 = 0;
+         A_Name = " ";
+         A_PIN = " ";
+         A_Theme = " ";
+
+         }
+         */
+
     }
-
-
-
-    /* public Advisor()
-     {
-     A_ID1 = 0;
-     A_Name = " ";
-     A_PIN = " ";
-     A_Theme = " ";
-
-     }
-     */
-
-}
