@@ -12,6 +12,7 @@ public class Course
     private string C_Name1;
     private string C_Code1;
     private int C_Credit1;
+    private string Error_1;
 
     public int C_ID
     {
@@ -62,6 +63,19 @@ public class Course
         set
         {
             C_Credit1 = value;
+        }
+    }
+
+    public string Error
+    {
+        get
+        {
+            return Error_1;
+        }
+
+        set
+        {
+            Error_1 = value;
         }
     }
 }
