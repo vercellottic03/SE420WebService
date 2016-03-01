@@ -4,38 +4,26 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Summary description for Major
+/// Summary description for req
 /// </summary>
-public class Major
+public class Req
 {
-    private int M_ID1;
-    private string M_Name1;
+    private int R_ID1;
     private string R_Type1;
+    private int C_ID1;
+    private int R_isGen1;
     private string Error1;
 
-    public int M_ID
+    public int R_ID
     {
         get
         {
-            return M_ID1;
+            return R_ID1;
         }
 
         set
         {
-            M_ID1 = value;
-        }
-    }
-
-    public string M_Name
-    {
-        get
-        {
-            return M_Name1;
-        }
-
-        set
-        {
-            M_Name1 = value;
+            R_ID1 = value;
         }
     }
 
@@ -49,6 +37,32 @@ public class Major
         set
         {
             R_Type1 = value;
+        }
+    }
+
+    public int C_ID
+    {
+        get
+        {
+            return C_ID1;
+        }
+
+        set
+        {
+            C_ID1 = value;
+        }
+    }
+
+    public int R_isGen
+    {
+        get
+        {
+            return R_isGen1;
+        }
+
+        set
+        {
+            R_isGen1 = value;
         }
     }
 
