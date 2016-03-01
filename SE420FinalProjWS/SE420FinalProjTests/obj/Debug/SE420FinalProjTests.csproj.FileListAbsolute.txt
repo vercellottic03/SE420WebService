@@ -1,0 +1,6 @@
+C:\Users\cody\Documents\SE420WebService\SE420FinalProjWS\SE420FinalProjTests\bin\Debug\SE420FinalProjTests.dll
+C:\Users\cody\Documents\SE420WebService\SE420FinalProjWS\SE420FinalProjTests\bin\Debug\SE420FinalProjTests.pdb
+C:\Users\cody\Documents\SE420WebService\SE420FinalProjWS\SE420FinalProjTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\cody\Documents\SE420WebService\SE420FinalProjWS\SE420FinalProjTests\obj\Debug\SE420FinalProjTests.csprojResolveAssemblyReference.cache
+C:\Users\cody\Documents\SE420WebService\SE420FinalProjWS\SE420FinalProjTests\obj\Debug\SE420FinalProjTests.dll
+C:\Users\cody\Documents\SE420WebService\SE420FinalProjWS\SE420FinalProjTests\obj\Debug\SE420FinalProjTests.pdb

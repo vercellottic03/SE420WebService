@@ -8,24 +8,8 @@ using System.Web;
 /// </summary>
 public class Req
 {
-    private int R_ID1;
     private string R_Type1;
-    private int C_ID1;
-    private int R_isGen1;
     private string Error1;
-
-    public int R_ID
-    {
-        get
-        {
-            return R_ID1;
-        }
-
-        set
-        {
-            R_ID1 = value;
-        }
-    }
 
     public string R_Type
     {
@@ -37,32 +21,6 @@ public class Req
         set
         {
             R_Type1 = value;
-        }
-    }
-
-    public int C_ID
-    {
-        get
-        {
-            return C_ID1;
-        }
-
-        set
-        {
-            C_ID1 = value;
-        }
-    }
-
-    public int R_isGen
-    {
-        get
-        {
-            return R_isGen1;
-        }
-
-        set
-        {
-            R_isGen1 = value;
         }
     }
 

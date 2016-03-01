@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SE420FinalProj(1)", "SE420FinalProj\", "{CFCBE64B-E41A-4940-B94F-FD927E9DFF67}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SE420FinalProj", "SE420FinalProj\", "{CFCBE64B-E41A-4940-B94F-FD927E9DFF67}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_8208"
@@ -24,13 +24,22 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SE420FinalProj(1)", "SE420F
 		SlnRelativePath = "SE420FinalProj\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SE420FinalProjTests", "SE420FinalProjTests\SE420FinalProjTests.csproj", "{E2466B9C-6D9A-4ACA-BFAC-659A511698B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{CFCBE64B-E41A-4940-B94F-FD927E9DFF67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CFCBE64B-E41A-4940-B94F-FD927E9DFF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFCBE64B-E41A-4940-B94F-FD927E9DFF67}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFCBE64B-E41A-4940-B94F-FD927E9DFF67}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{E2466B9C-6D9A-4ACA-BFAC-659A511698B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2466B9C-6D9A-4ACA-BFAC-659A511698B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2466B9C-6D9A-4ACA-BFAC-659A511698B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2466B9C-6D9A-4ACA-BFAC-659A511698B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

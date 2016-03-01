@@ -26,7 +26,6 @@ using System.Web;
         }
 
         //Initialize values to use as credentials for database connection
-        /*
         public void  Initialize()
         {
             server = "localhost";
@@ -41,7 +40,7 @@ using System.Web;
 
             connection = new MySqlConnection(connectionString);      
         }
-        */
+        /*
         //Connection for Cody's localhost
         public void Initialize()
         {
@@ -57,11 +56,11 @@ using System.Web;
 
             connection = new MySqlConnection(connectionString);
         }
+        */
         public MySqlConnection getConn()
         {
             return connection;
         }
-
         //attempt to open connection to database
         public bool OpenConnection()
         {

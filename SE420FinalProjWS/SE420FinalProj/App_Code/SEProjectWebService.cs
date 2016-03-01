@@ -29,13 +29,17 @@ public class SEProjectWebService : System.Web.Services.WebService
         //Uncomment the following line if using designed components 
         //InitializeComponent(); 
     }
-
+    [WebMethod]
+    public string HelloWorld()
+    {
+        string h = "Hello World!";
+        return h;
+    }
     [WebMethod]
     public string clrSchedule(int sid, int curyear, int curterm)
     {
         DBConnect advisorConnect = new DBConnect();
         MySqlConnection adconn = advisorConnect.getConn();
-        string response = "There has been an error connecting to the database, something has gone wrong.";
         if (advisorConnect.OpenConnection() == true)
         {
 
@@ -54,18 +58,22 @@ public class SEProjectWebService : System.Web.Services.WebService
                 cmd.Parameters.AddWithValue("curterm", curterm);
                 //Execute command
                 cmd.ExecuteNonQuery();
+                string success = "query seccessful";
+                return success;
             }
             catch (MySqlException ex)
             {
-                response = ex.ToString();
+                advisorConnect.CloseConnection();
+                return error.badInfo;
             }
         }
         else
         {
-            response = "Query successful";
+            string response = error.badConn;
+            advisorConnect.CloseConnection();
+            return response; 
         }
-        advisorConnect.CloseConnection();
-        return response;
+        
     }
 
     [WebMethod]
@@ -98,7 +106,7 @@ public class SEProjectWebService : System.Web.Services.WebService
         }
         else
         {
-            response = "There has been an error connecting to the database, something has gone wrong.";
+            response = error.badConn;
         }
         advisorConnect.CloseConnection();
         return response;
@@ -190,7 +198,7 @@ public class SEProjectWebService : System.Web.Services.WebService
         else
         {
             Course bad = new Course();
-            bad.Error = "There has been an error connecting to the database, something has gone wrong.";
+            bad.Error = error.badConn;
             Test.Add(bad);
         }
         advisorConnect.CloseConnection();
@@ -288,7 +296,7 @@ public class SEProjectWebService : System.Web.Services.WebService
         else
         {
             Req bad = new Req();
-            bad.Error = "There has been an error connecting to the database, something has gone wrong.";
+            bad.Error = error.badConn;
             Test.Add(bad);
         }
         advisorConnect.CloseConnection();
@@ -362,7 +370,7 @@ public class SEProjectWebService : System.Web.Services.WebService
         else
         {
             Major bad = new Major();
-            bad.Error = "There has been an error connecting to the database, something has gone wrong.";
+            bad.Error = error.badConn;
             Test.Add(bad);
         }
         advisorConnect.CloseConnection();
@@ -416,7 +424,7 @@ public class SEProjectWebService : System.Web.Services.WebService
                 cmd.Parameters.AddWithValue("stheme", sTheme);
                 cmd.ExecuteNonQuery();
             }
-            response = "query succesful";
+            response = "query successful";
             putStuDb.CloseConnection();
             return response;
         }
