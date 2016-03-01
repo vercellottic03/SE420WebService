@@ -6,7 +6,7 @@ using System.Web;
 /// <summary>
 /// Summary description for getSchedBySIDForStudent
 /// </summary>
-public class getSchedBySIDForStudent
+public class getSched
 {
     private string c_name1;
     private string c_code1;
