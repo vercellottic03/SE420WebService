@@ -148,8 +148,6 @@ public class SEProjectWebService : System.Web.Services.WebService
         return Test;
     }
 
-<<<<<<< HEAD
-=======
     [WebMethod]
     public List<Course> getCoursesByType(string rtype)
     //int choice
@@ -298,8 +296,7 @@ public class SEProjectWebService : System.Web.Services.WebService
         return Test;
     }
 
->>>>>>> c894df0d93ca506de1674fce74a54035714b82e4
-    [WebMethod]
+   [WebMethod]
     public string setMajor(int studentId, int majorId)
     {
         DBConnect setMajDb = new DBConnect();
