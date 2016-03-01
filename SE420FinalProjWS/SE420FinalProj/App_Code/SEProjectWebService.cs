@@ -72,7 +72,7 @@ public class SEProjectWebService : System.Web.Services.WebService
         //Return List
         return Test;
     }
-    
+
     [WebMethod]
     public string setMajor(int studentId, int majorId)
     {
@@ -132,7 +132,7 @@ public class SEProjectWebService : System.Web.Services.WebService
         MySqlConnection putStuConn = putStuDb.getConn();
         if (putStuDb.OpenConnection() == true)
         {
-            using(MySqlCommand cmd = new MySqlCommand("putStudent", putStuConn))
+            using (MySqlCommand cmd = new MySqlCommand("putStudent", putStuConn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("sname", sName);
@@ -165,7 +165,8 @@ public class SEProjectWebService : System.Web.Services.WebService
         }
         if (putSchedDB.OpenConnection() == true)
         {
-            try {
+            try
+            {
                 using (MySqlCommand cmd = new MySqlCommand("putSchedule", putSchedConn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -178,7 +179,8 @@ public class SEProjectWebService : System.Web.Services.WebService
                 response = "query successful";
                 putSchedDB.CloseConnection();
                 return response;
-            }catch (MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
                 response = Convert.ToString(ex);
                 putSchedDB.CloseConnection();
@@ -201,7 +203,8 @@ public class SEProjectWebService : System.Web.Services.WebService
         List<Student> S = new List<Student>();
         if (getStuAdDb.OpenConnection() == true)
         {
-            try {
+            try
+            {
                 using (MySqlCommand cmd = new MySqlCommand("getStudentsByAdvisor", getStuAdConn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -213,7 +216,7 @@ public class SEProjectWebService : System.Web.Services.WebService
                         i.Stu_ID = reader.GetInt32(0);
                         i.Stu_Name = reader.GetString(1);
                         i.M_ID = reader.GetInt32(2);
-                        i.m_Name = reader.GetString(3); 
+                        i.m_Name = reader.GetString(3);
                         S.Add(i);
                     }
                     getStuAdDb.CloseConnection();
@@ -227,7 +230,7 @@ public class SEProjectWebService : System.Web.Services.WebService
                 S.Add(bad);
                 getStuAdDb.CloseConnection();
                 return S;
-            } 
+            }
         }
         else
         {
@@ -283,6 +286,56 @@ public class SEProjectWebService : System.Web.Services.WebService
             bad.Error = error.badConn;
             S.Add(bad);
             schedForStudDb.CloseConnection();
+            return S;
+        }
+    }
+
+    [WebMethod]
+    public List<Schedule> getSchedBySIDForAdvis(int sid, int aid, string apin)
+    {
+        DBConnect getSchedAdDB = new DBConnect();
+        MySqlConnection getSchedAdConn = getSchedAdDB.getConn();
+        List<Schedule> S = new List<Schedule>();
+        if (getSchedAdDB.OpenConnection())
+        {
+            using (MySqlCommand cmd = new MySqlCommand("getSchedBySIDForAdvisor", getSchedAdConn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("sid", sid);
+                cmd.Parameters.AddWithValue("aid", aid);
+                cmd.Parameters.AddWithValue("apin", apin);
+                var reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Schedule g = new Schedule();
+                        g.C_name = reader.GetString(0);
+                        g.C_code = reader.GetString(1);
+                        g.C_credits = reader.GetInt32(2);
+                        g.S_term = reader.GetInt32(3);
+                        g.S_year = reader.GetInt32(4);
+                        S.Add(g);
+                    }
+                    getSchedAdDB.CloseConnection();
+                    return S;
+                }
+                else
+                {
+                    Schedule bad = new Schedule();
+                    bad.Error = error.badInfo;
+                    S.Add(bad);
+                    getSchedAdDB.CloseConnection();
+                    return S;
+                }
+            }
+        }
+        else
+        {
+            Schedule bad = new Schedule();
+            bad.Error = error.badConn;
+            S.Add(bad);
+            getSchedAdDB.CloseConnection();
             return S;
         }
     }

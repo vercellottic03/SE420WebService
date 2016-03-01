@@ -49,10 +49,10 @@ using System.Web;
             //server = "127.0.0.1";
             //server = "10.240.0.2:3306";
             database = "advise";
-            uid = "ws";
-            password = "^Brute4rce7hi5$";
+            uid = "root";
+            password = "spinner";
             string connectionString;
-            connectionString = "SERVER=" + server + ";" + "PORT=4321;DATABASE=" +
+            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
             connection = new MySqlConnection(connectionString);
