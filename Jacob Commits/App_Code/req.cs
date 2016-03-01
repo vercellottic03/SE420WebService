@@ -4,66 +4,65 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Summary description for Advisor
+/// Summary description for req
 /// </summary>
-public class Advisor
+public class req
 {
-    private int A_ID1;
-    private string a_Name1;
-    private string a_PIN1;
-    private string a_Theme1;
+    private int R_ID1;
+    private string R_Type1;
+    private int C_ID1;
+    private int R_isGen1;
     private string Error1;
 
-    public int A_ID
+    public int R_ID
     {
-
         get
         {
-            return A_ID1;
+            return R_ID1;
         }
 
         set
         {
-            A_ID1 = value;
+            R_ID1 = value;
         }
     }
 
-    public string A_Name
+    public string R_Type
     {
         get
         {
-            return a_Name1;
+            return R_Type1;
         }
 
         set
         {
-            a_Name1 = value;
+            R_Type1 = value;
         }
     }
 
-    public string A_PIN
+    public int C_ID
     {
         get
         {
-            return a_PIN1;
+            return C_ID1;
         }
 
         set
         {
-            a_PIN1 = value;
+            C_ID1 = value;
         }
     }
 
-    public string A_Theme
+    public int R_isGen
     {
         get
         {
-            return a_Theme1;
+            return R_isGen1;
         }
 
         set
         {
-            a_Theme1 = value;
+            R_isGen1 = value;
         }
     }
 
@@ -79,5 +78,4 @@ public class Advisor
             Error1 = value;
         }
     }
-
 }
